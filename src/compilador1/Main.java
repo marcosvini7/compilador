@@ -24,7 +24,7 @@ public class Main {
 
 		// ------------- leitura do arquivo de texto -----------//
 
-		String local = "C:\\projetos\\java\\arquivo.txt";
+		String local = "C:\\projetos\\java\\arquivoTeste.txt";
 		String line;
 		try (BufferedReader br = new BufferedReader(new FileReader(local))) {
 			line = br.readLine();
@@ -36,7 +36,7 @@ public class Main {
 			System.out.println(e.getMessage());
 		}
 
-		// ------------- inicio da chamada das funções -------------//
+		// ------------- inicio da chamada das funÃ§Ãµes -------------//
 
 		posicao = 0;
 		numeroToken = 0;
@@ -46,7 +46,7 @@ public class Main {
 
 	}
 
-	// ------------- funções do lexico -----------//
+	// ------------- funÃ§Ãµes do lexico -----------//
 
 	public static void lexico() {
 		int i = 0;
@@ -57,12 +57,12 @@ public class Main {
 				if (texto.charAt(i) == letra) {
 					if (!reconhecerPr(i).isEmpty()) {
 						n++;
-						System.out.println(n + "º Token: " + reconhecerPr(i));
+						System.out.println(n + "Âº Token: " + reconhecerPr(i));
 						i += reconhecerPr(i).length() - 19;
 						pular = false;
 					} else {
 						n++;
-						System.out.println(n + "º Token: " + reconhecerIdt(i));
+						System.out.println(n + "Âº Token: " + reconhecerIdt(i));
 						i += reconhecerIdt(i).length() - 15;
 						pular = false;
 					}
@@ -72,7 +72,7 @@ public class Main {
 			if (texto.charAt(i) == '/' || texto.charAt(i) == '@') {
 				if (!reconhecerComentario(i).isEmpty()) {
 					n++;
-					System.out.println(n + "º Token: " + reconhecerComentario(i));
+					System.out.println(n + "Âº Token: " + reconhecerComentario(i));
 					i += reconhecerComentario(i).length() - 12;
 					pular = false;
 				}
@@ -85,7 +85,7 @@ public class Main {
 			for (char digito : digitos) {
 				if (texto.charAt(i) == digito) {
 					n++;
-					System.out.println(n + "º Token: " + reconhecerDigito(i));
+					System.out.println(n + "Âº Token: " + reconhecerDigito(i));
 					i += reconhecerDigito(i).length() - 8;
 					pular = false;
 				}
@@ -95,7 +95,7 @@ public class Main {
 				if (texto.charAt(i) == simbolo) {
 					if (!reconhecerSimbolo(i).isEmpty()) {
 						n++;
-						System.out.println(n + "º Token: " + reconhecerSimbolo(i));
+						System.out.println(n + "Âº Token: " + reconhecerSimbolo(i));
 						i += reconhecerSimbolo(i).length() - 9;
 						pular = false;
 					}
@@ -129,8 +129,8 @@ public class Main {
 					}
 				}
 				if (reconhece == false) {
-					// System.out.println(("Erro "+n+"º Token: dígito decimal não finalizado"));
-					System.out.println(("Erro " + numeroToken + "º Token: dígito decimal não finalizado"));
+					// System.out.println(("Erro "+n+"Âº Token: dÃ­gito decimal nÃ£o finalizado"));
+					System.out.println(("Erro " + numeroToken + "Âº Token: dÃ­gito decimal nÃ£o finalizado"));
 					System.exit(0);
 				}
 
@@ -169,7 +169,7 @@ public class Main {
 					}
 					comentario += texto.charAt(a);
 					if (a == texto.length() - 1) {
-						System.out.println("Erro: comentário não finalizado");
+						System.out.println("Erro: comentÃ¡rio nÃ£o finalizado");
 						System.exit(0);
 					}
 				}
@@ -188,7 +188,7 @@ public class Main {
 					}
 					comentario += texto.charAt(a);
 					if (a == texto.length() - 1) {
-						System.out.println("Erro: comentário não finalizado");
+						System.out.println("Erro: comentÃ¡rio nÃ£o finalizado");
 						System.exit(0);
 					}
 				}
@@ -622,7 +622,7 @@ public class Main {
 		return false;
 	}
 
-	// ------------- funções do sintatico -----------//
+	// ------------- funÃ§Ãµes do sintatico -----------//
 
 	public static String lexico1() {
 		int i = posicao;
@@ -757,7 +757,7 @@ public class Main {
 			comandoComposto();
 		}
 		if (token.contains("Palavra reservada: ") || token.contains("Simbolo: ")) {
-			System.out.println("Erro Linha " + linhaErro() + ", Token " + numeroToken + ": Token não esperado");
+			System.out.println("Erro Linha " + linhaErro() + ", Token " + numeroToken + ": Token nÃ£o esperado");
 			System.exit(0);
 		}
 	}
