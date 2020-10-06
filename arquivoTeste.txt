@@ -1,0 +1,24 @@
+programa programador;
+@@ este é um comentario
+
+variavel = valor;
+real numero = valor;
+variavel2 = valor;
+
+caractere a1, a2, a3;
+// este é outro comentário //
+inteiro x; 
+
+/* comentario
+de varias
+linhas. se você retirar o asterisco barra
+o compilador acusa que o comentário não foi
+finalizado */
+
+inteiro x = valor; 
+@@ate aqui tudo funciona
+funcao somar(inteiro x, real y) = real;
+inteiro = valor; // bem aqui falta um indentificador entao vai dar erro //
+inicio
+    x=(func(x,y);); // bem aqui se retirar o y por exemplo o compilador vai dizer que falta um fator//
+fim
